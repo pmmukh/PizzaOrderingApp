@@ -58,5 +58,7 @@ public class Sauce {
 		this.selection = selection;
 	}
 
-	
+	public Long getId() {
+		return id;
+	}
 }

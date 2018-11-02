@@ -45,5 +45,7 @@ public class User {
 		this.selection = selection;
 	}
 	
-	
+	public Long getId() {
+		return id;
+	}
 }

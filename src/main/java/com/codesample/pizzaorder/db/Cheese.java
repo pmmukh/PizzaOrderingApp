@@ -57,6 +57,8 @@ public class Cheese {
 	public void setSelection(List<Selection> selection) {
 		this.selection = selection;
 	}
-
+	public Long getId() {
+		return id;
+	}
 	
 }
