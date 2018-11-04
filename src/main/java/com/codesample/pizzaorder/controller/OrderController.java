@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.codesample.pizzaorder.entities.ConfirmItem;
+import com.codesample.pizzaorder.entities.InventoryUpdate;
 import com.codesample.pizzaorder.entities.NewToppings;
 import com.codesample.pizzaorder.entities.OrderItem;
 import com.codesample.pizzaorder.exceptions.InvalidRequestException;
@@ -40,8 +41,13 @@ public class OrderController {
 	
 	@RequestMapping(value="/admin/addToppings", method = RequestMethod.PUT)
 	public void addToppings( @RequestBody NewToppings toppings) {
+		orderService.addToppings(toppings);
+	}
+	
+	@RequestMapping(value="/admin/updateInventory", method = RequestMethod.PUT)
+	public void updateInventory( @RequestBody InventoryUpdate inventoryUpdate) {
 		try {
-			orderService.addToppings(toppings);
+			orderService.updateInventory(inventoryUpdate);
 		} catch(InvalidRequestException ire) {
 			throw ire;
 		}

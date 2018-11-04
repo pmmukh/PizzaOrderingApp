@@ -49,4 +49,7 @@ public class Toppings {
 	public void setSelections(List<Selection> selections) {
 		this.selections = selections;
 	}
+	public Long getId() {
+		return id;
+	}
 }
