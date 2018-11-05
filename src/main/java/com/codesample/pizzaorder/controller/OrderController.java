@@ -20,7 +20,7 @@ public class OrderController {
 	@Autowired
 	OrderService orderService;
 	
-	@RequestMapping(value="/addPizza/{uid}", method = RequestMethod.POST)
+	@RequestMapping(value="/order/addPizza/{uid}", method = RequestMethod.POST)
 	public ConfirmItem addItem(@PathVariable("uid") Long userId, @RequestBody OrderItem item) {
 		try {
 			ConfirmItem confirmItem = orderService.addItem(item, userId);
@@ -30,10 +30,11 @@ public class OrderController {
 		}
 	}
 	
-	@RequestMapping(value="/editPizza/{oid}", method = RequestMethod.PUT)
-	public void updateItem(@PathVariable("oid") Long orderId, @RequestBody OrderItem item) {
+	@RequestMapping(value="/order/editPizza/{oid}", method = RequestMethod.POST)
+	public ConfirmItem updateItem(@PathVariable("oid") Long orderId, @RequestBody OrderItem item) {
 		try {
-			orderService.updateItem(item, orderId);
+			ConfirmItem confirmItem = orderService.updateItem(item, orderId);
+			return confirmItem;
 		} catch(InvalidRequestException ire) {
 			throw ire;
 		}

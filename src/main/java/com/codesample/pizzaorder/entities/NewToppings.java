@@ -5,13 +5,13 @@ import java.util.List;
 
 public class NewToppings {
 
-	List<Topping> newToppings = new ArrayList<Topping>();
+	List<Top> newToppings = new ArrayList<Top>();
 
-	public List<Topping> getNewToppings() {
+	public List<Top> getNewToppings() {
 		return newToppings;
 	}
 
-	public void setNewToppings(List<Topping> newToppings) {
+	public void setNewToppings(List<Top> newToppings) {
 		this.newToppings = newToppings;
 	}
 	
